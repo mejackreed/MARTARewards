@@ -14,16 +14,14 @@ class DrawerContent extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    console.log(nextProps)
-    console.log('next')
     const { loggedIn } = nextProps
-    BackAndroid.addEventListener('hardwareBackPress', () => {
-      if (this.context.drawer.props.open) {
-        this.toggleDrawer()
-        return true
-      }
-      return false
-    })
+    // BackAndroid.addEventListener('hardwareBackPress', () => {
+    //   if (this.context.drawer.props.open) {
+    //     this.toggleDrawer()
+    //     return true
+    //   }
+    //   return false
+    // })
   }
 
   toggleDrawer () {
@@ -65,7 +63,7 @@ class DrawerContent extends Component {
       </View>
     )
   }
-  
+
   renderLoggedOutContent () {
     return (
       <DrawerButton text='Login' onPress={this.handlePressLogin} />
@@ -73,11 +71,7 @@ class DrawerContent extends Component {
   }
 
   render () {
-    console.log(this.state)
-    console.log(this.props)
     const { loggedIn, temperature, city } = this.props
-    console.log(loggedIn)
-    // console.log(isLoggedIn(this.state.login))
     return (
       <ScrollView style={styles.container}>
         <Image source={Images.logo} style={styles.logo} />
