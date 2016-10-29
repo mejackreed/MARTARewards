@@ -20,33 +20,12 @@ export default class PresentationScreen extends React.Component {
 
           <View style={styles.section} >
             <Text style={styles.sectionText} >
-              Default screens for development, debugging, and alpha testing
-              are available below.
+              Ride MARTA, earn rewards, stay happy!
             </Text>
           </View>
 
-          <RoundedButton onPress={NavigationActions.componentExamples}>
-            Component Examples Screen
-          </RoundedButton>
-
-          <RoundedButton onPress={NavigationActions.usageExamples}>
-            Usage Examples Screen
-          </RoundedButton>
-
-          <RoundedButton onPress={NavigationActions.apiTesting}>
-            API Testing Screen
-          </RoundedButton>
-
-          <RoundedButton onPress={NavigationActions.theme}>
-            Theme Screen
-          </RoundedButton>
-
-          <RoundedButton onPress={NavigationActions.deviceInfo}>
-            Device Info Screen
-          </RoundedButton>
-
           <View style={styles.centered}>
-            <Text style={styles.subtitle}>Made with ❤️ by Infinite Red</Text>
+            <Text style={styles.subtitle}>Made with ❤️ at #MARTAHack</Text>
           </View>
 
         </ScrollView>
