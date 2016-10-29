@@ -64,7 +64,7 @@ class DrawerContent extends Component {
         <DrawerButton text='Profile' onPress={this.handlePressProfile} />
         <DrawerButton text='Stats' onPress={this.handlePressStats} />
         <DrawerButton text='Survey' onPress={this.handlePressSurvey} />
-        <DrawerButton text='Sponsor' onPress={this.handlePressSponsor} />
+        <DrawerButton text='Featured Benefits' onPress={this.handlePressSponsor} />
       </View>
     )
   }

@@ -9,6 +9,8 @@ const images = {
   world: require('../Images/world.png'),
   football: require('../Images/football.png'),
   beerBottles: require('../Images/beer_bottles.png'),
+  falcons: require('../Images/atlfalcons.jpg'),
+  miller: require('../Images/miller.png'),
 };
 
 export default images;

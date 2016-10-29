@@ -46,7 +46,7 @@ class NavigationRouter extends Component {
             <Scene key='profile' component={ProfileScreen} title='Profile' />
             <Scene key='stats' component={StatsScreen} title='Stats' />
             <Scene key='survey' component={SurveyScreen} title='Survey' />
-            <Scene key='sponsor' component={SponsorScreen} title='Sponsor' />
+            <Scene key='sponsor' component={SponsorScreen} title='Featured Benefits' />
             <Scene key='how' component={HowScreen} title='How It Works' />
           </Scene>
         </Scene>
