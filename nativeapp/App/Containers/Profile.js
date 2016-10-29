@@ -41,6 +41,9 @@ class Profile extends React.Component {
           <Image source={Images.trainWheel} style={{width: 50, height: 50}} />
         </View>
         <View style={styles.section}>
+          <View style={{alignItems: 'center'}}>
+            <Text>Badges</Text>
+          </View>
           <Image source={Images.beerBottles} style={{width: 75, height: 75}} />
           <Image source={Images.world} style={{width: 75, height: 75}} />
           <Image source={Images.football} style={{width: 75, height: 75}} />
