@@ -53,6 +53,11 @@ class DrawerContent extends Component {
     NavigationActions.sponsor();
   };
 
+  handlePressHow = () => {
+    this.toggleDrawer();
+    NavigationActions.how();
+  };
+
   renderLoggedInContent () {
     return (
       <View>
@@ -61,6 +66,12 @@ class DrawerContent extends Component {
         <DrawerButton text='Survey' onPress={this.handlePressSurvey} />
         <DrawerButton text='Sponsor' onPress={this.handlePressSponsor} />
       </View>
+    )
+  }
+
+  renderBothContent () {
+    return (
+      <DrawerButton text='How It Works' onPress={this.handlePressHow} />
     )
   }
 
@@ -76,6 +87,7 @@ class DrawerContent extends Component {
       <ScrollView style={styles.container}>
         <Image source={Images.logo} style={styles.logo} />
         {loggedIn ? this.renderLoggedInContent() : this.renderLoggedOutContent()}
+        {this.renderBothContent()}
       </ScrollView>
     )
   }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { ScrollView, Text, Image, View } from 'react-native'
 import { Images } from '../Themes'
+import * as Animatable from 'react-native-animatable'
 import RoundedButton from '../Components/RoundedButton'
 import { Actions as NavigationActions } from 'react-native-router-flux'
 
@@ -14,7 +15,7 @@ export default class PresentationScreen extends React.Component {
         <Image source={Images.background} style={styles.backgroundImage} resizeMode='stretch' />
         <ScrollView style={styles.container}>
           <View style={styles.centered}>
-            <Image source={Images.clearLogo} style={styles.logo} />
+            <Animatable.Image animation='pulse' iterationCount='infinite' source={Images.logo} style={styles.logo} />
           </View>
 
           <View style={styles.section} >

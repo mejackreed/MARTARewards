@@ -20,6 +20,7 @@ import ProfileScreen from '../Containers/Profile'
 import StatsScreen from '../Containers/Stats'
 import SurveyScreen from '../Containers/Survey'
 import SponsorScreen from '../Containers/Sponsor'
+import HowScreen from '../Containers/HowItWorks'
 
 /* **************************
 * Documentation: https://github.com/aksonov/react-native-router-flux
@@ -46,6 +47,7 @@ class NavigationRouter extends Component {
             <Scene key='stats' component={StatsScreen} title='Stats' />
             <Scene key='survey' component={SurveyScreen} title='Survey' />
             <Scene key='sponsor' component={SponsorScreen} title='Sponsor' />
+            <Scene key='how' component={HowScreen} title='How It Works' />
           </Scene>
         </Scene>
       </Router>
