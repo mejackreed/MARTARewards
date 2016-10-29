@@ -1,13 +1,22 @@
-import React, { Component } from 'react'
-import { ScrollView, Image, BackAndroid } from 'react-native'
+import React, { Component, PropTypes } from 'react'
+import { ScrollView, Image, BackAndroid, View } from 'react-native'
+import { connect } from 'react-redux'
 import styles from './Styles/DrawerContentStyle'
 import { Images } from '../Themes'
 import DrawerButton from '../Components/DrawerButton'
 import { Actions as NavigationActions } from 'react-native-router-flux'
+import LoginActions, { isLoggedIn } from '../Redux/LoginRedux'
 
 class DrawerContent extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {}
+  }
 
-  componentDidMount () {
+  componentWillReceiveProps (nextProps) {
+    console.log(nextProps)
+    console.log('next')
+    const { loggedIn } = nextProps
     BackAndroid.addEventListener('hardwareBackPress', () => {
       if (this.context.drawer.props.open) {
         this.toggleDrawer()
@@ -46,23 +55,51 @@ class DrawerContent extends Component {
     NavigationActions.sponsor();
   };
 
-  render () {
+  renderLoggedInContent () {
     return (
-      <ScrollView style={styles.container}>
-        <Image source={Images.logo} style={styles.logo} />
-        <DrawerButton text='Login' onPress={this.handlePressLogin} />
+      <View>
         <DrawerButton text='Profile' onPress={this.handlePressProfile} />
         <DrawerButton text='Stats' onPress={this.handlePressStats} />
         <DrawerButton text='Survey' onPress={this.handlePressSurvey} />
         <DrawerButton text='Sponsor' onPress={this.handlePressSponsor} />
+      </View>
+    )
+  }
+  
+  renderLoggedOutContent () {
+    return (
+      <DrawerButton text='Login' onPress={this.handlePressLogin} />
+    )
+  }
+
+  render () {
+    console.log(this.state)
+    console.log(this.props)
+    const { loggedIn, temperature, city } = this.props
+    console.log(loggedIn)
+    // console.log(isLoggedIn(this.state.login))
+    return (
+      <ScrollView style={styles.container}>
+        <Image source={Images.logo} style={styles.logo} />
+        {loggedIn ? this.renderLoggedInContent() : this.renderLoggedOutContent()}
       </ScrollView>
     )
   }
 
 }
 
+DrawerContent.propTypes = {
+  loggedIn: PropTypes.bool
+}
+const mapStateToProps = (state) => {
+  return {
+    loggedIn: isLoggedIn(state.login)
+  }
+}
+
+
 DrawerContent.contextTypes = {
   drawer: React.PropTypes.object
 }
 
-export default DrawerContent
+export default connect(mapStateToProps)(DrawerContent)
