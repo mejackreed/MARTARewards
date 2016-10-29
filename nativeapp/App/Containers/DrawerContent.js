@@ -19,42 +19,42 @@ class DrawerContent extends Component {
 
   toggleDrawer () {
     this.context.drawer.toggle()
-  }
+  };
 
-  handlePressComponents = () => {
-    this.toggleDrawer()
-    NavigationActions.componentExamples()
-  }
+  handlePressLogin = () => {
+    this.toggleDrawer();
+    NavigationActions.login();
+  };
 
-  handlePressUsage = () => {
-    this.toggleDrawer()
-    NavigationActions.usageExamples()
-  }
+  handlePressProfile = () => {
+    this.toggleDrawer();
+    NavigationActions.profile();
+  };
 
-  handlePressAPI = () => {
-    this.toggleDrawer()
-    NavigationActions.apiTesting()
-  }
+  handlePressStats = () => {
+    this.toggleDrawer();
+    NavigationActions.stats();
+  };
 
-  handlePressTheme = () => {
-    this.toggleDrawer()
-    NavigationActions.theme()
-  }
+  handlePressSurvey = () => {
+    this.toggleDrawer();
+    NavigationActions.survey();
+  };
 
-  handlePressDevice = () => {
-    this.toggleDrawer()
-    NavigationActions.deviceInfo()
-  }
+  handlePressSponsor = () => {
+    this.toggleDrawer();
+    NavigationActions.sponsor();
+  };
 
   render () {
     return (
       <ScrollView style={styles.container}>
         <Image source={Images.logo} style={styles.logo} />
-        <DrawerButton text='Component Examples' onPress={this.handlePressComponents} />
-        <DrawerButton text='Usage Examples' onPress={this.handlePressUsage} />
-        <DrawerButton text='API Testing' onPress={this.handlePressAPI} />
-        <DrawerButton text='Themes' onPress={this.handlePressTheme} />
-        <DrawerButton text='Device Info' onPress={this.handlePressDevice} />
+        <DrawerButton text='Login' onPress={this.handlePressLogin} />
+        <DrawerButton text='Profile' onPress={this.handlePressProfile} />
+        <DrawerButton text='Stats' onPress={this.handlePressStats} />
+        <DrawerButton text='Survey' onPress={this.handlePressSurvey} />
+        <DrawerButton text='Sponsor' onPress={this.handlePressSponsor} />
       </ScrollView>
     )
   }

@@ -16,6 +16,10 @@ import MapviewExample from '../Containers/MapviewExample'
 import APITestingScreen from '../Containers/APITestingScreen'
 import ThemeScreen from '../Containers/ThemeScreen'
 import DeviceInfoScreen from '../Containers/DeviceInfoScreen'
+import ProfileScreen from '../Containers/Profile'
+import StatsScreen from '../Containers/Stats'
+import SurveyScreen from '../Containers/Survey'
+import SponsorScreen from '../Containers/Sponsor'
 
 /* **************************
 * Documentation: https://github.com/aksonov/react-native-router-flux
@@ -38,6 +42,10 @@ class NavigationRouter extends Component {
             <Scene key='apiTesting' component={APITestingScreen} title='API Testing' />
             <Scene key='theme' component={ThemeScreen} title='Theme' />
             <Scene key='deviceInfo' component={DeviceInfoScreen} title='Device Info' />
+            <Scene key='profile' component={ProfileScreen} title='Profile' />
+            <Scene key='stats' component={StatsScreen} title='Stats' />
+            <Scene key='survey' component={SurveyScreen} title='Survey' />
+            <Scene key='sponsor' component={SponsorScreen} title='Sponsor' />
           </Scene>
         </Scene>
       </Router>
